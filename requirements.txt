@@ -14,3 +14,6 @@ uptrain @ git+https://github.com/uptrain-ai/uptrain.git@main
 sqlite-utils
 openai>=1.6.1
 litellm>=1.15.7
+streamlit
+rouge_score
+
