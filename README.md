@@ -3,7 +3,7 @@
 
 
 1. Clone/Download the repository:
-   - If you have Git installed, use the command: `git clone [repository URL]`
+   - If you have Git installed, use the command: `git clone https://github.com/AnuragAnand14/uptrain/tree/main`
    - Alternatively, download the ZIP file from the repository's page and extract it
 
 2. Open Chat_Metrics.py:
