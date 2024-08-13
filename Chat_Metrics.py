@@ -36,7 +36,7 @@ class MetricsEvaluator:
         - Others
         """
         choices = ["Very Urgent and has to be forwarded to Human Help ", "Very Urgent but can be resolved by LLM", "Urgent", "Normal", "Not at all Urgent"]
-        choice_scores = [1.0, 0.8, 0.6, 0.4, 0.2, 0.0]
+        choice_scores = [100, 80, 60, 40, 20, 00]
         prompt_var_to_column_mapping = {"question": "user_question"}
 
         results = self.eval_llm.evaluate(
@@ -70,7 +70,7 @@ def get_evaluation_scores(chat_data, openai_api_key):
             "Guideline Adherence": result.get('score_conversation_Guidance_adherence', 0.0) * 100,
             "Conversation Satisfaction": result.get('score_conversation_satisfaction', 0.0) * 100,
             "Conversation Length": result.get('conversation_length', 0.0) ,
-            "Urgency": result.get('score_custom_prompt', 0.0) * 100,
+            "Urgency": result.get('score_custom_prompt', 0.0) ,
         }
    
     return None
@@ -95,7 +95,7 @@ def display_score_bars(scores_list):
         with col4:
             urgency_score = scores.get('Urgency')
             if urgency_score is not None:
-                st.progress(urgency_score / 100, text=f"Urgency: {urgency_score:.2f}")
+                st.progress(urgency_score, text=f"Urgency: {urgency_score:.2f}")
             else:
                 st.write("Urgency: N/A")
 
