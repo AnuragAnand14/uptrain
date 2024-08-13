@@ -95,7 +95,7 @@ def display_score_bars(scores_list):
         with col4:
             urgency_score = scores.get('Urgency')
             if urgency_score is not None:
-                st.progress(urgency_score, text=f"Urgency: {urgency_score:.2f}")
+                st.progress(urgency_score / 100, text=f"Urgency: {urgency_score:.2f}")
             else:
                 st.write("Urgency: N/A")
 
